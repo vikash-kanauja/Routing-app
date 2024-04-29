@@ -12,8 +12,8 @@ const MessageDetailsPage = () => {
     if(state){
       setMessageData(state)
     }else{
-      let dataID = data.message.find((item) => item.id===Number(id))
-      setMessageData(dataID)
+      let messageDetail = data.message.find((item) => item.id===Number(id))
+      setMessageData(messageDetail)
     }
   },[id])
 
