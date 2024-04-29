@@ -1,14 +1,24 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useParams ,useLocation} from "react-router-dom";
 import data from "../MessageData/data.json";
 
 const MessageDetailsPage = () => {
+  const [messageData ,setMessageData] = useState(null);
+  const {state} = useLocation();
   const { id } = useParams();
-  console.log(typeof id);
+
+  
+  useEffect(()=>{
+    if(state){
+      setMessageData(state)
+    }else{
+      let dataID = data.message.find((item) => item.id===Number(id))
+      setMessageData(dataID)
+    }
+  },[id])
 
   // Find the message with the matching id
-  let messageData = data.message.find((message) => message.id === Number(id));
- console.log(messageData);
+   
 
   return (
     <div className="bg-gray-100 min-h-screen">

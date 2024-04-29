@@ -9,7 +9,7 @@ const Messages = () => {
         <ul className="max-w-lg mx-auto p-3">
           {data.message.map((message) => (
             <li key={message.id} className="text-center font-bold bg-red-200 border p-3 text-xl cursor-pointer">
-              <Link to={`/message/${message.id}`}>{message.sender}</Link>
+              <Link to={`/message/${message.id} ` } state={message} >{message.sender}</Link>
             </li>
           ))}
         </ul>
