@@ -4,10 +4,11 @@ import data from "../MessageData/data.json";
 
 const MessageDetailsPage = () => {
   const { id } = useParams();
+  console.log(typeof id);
 
   // Find the message with the matching id
-  const messageData = data.message.find((message) => message.id === parseInt(id));
-  console.log(messageData);
+  let messageData = data.message.find((message) => message.id === Number(id));
+ console.log(messageData);
 
   return (
     <div className="bg-gray-100 min-h-screen">
@@ -17,13 +18,13 @@ const MessageDetailsPage = () => {
           { messageData ? (
             <div className="max-w-lg mx-auto text-center">
               <h2>Message from {messageData.sender}</h2>
-
               <p>{messageData.content}</p>
             </div>
           ) : (
             <div className="max-w-lg mx-auto text-center">
               <h2>Message Not Found</h2>
-              </div>)
+              </div>
+              )
         }
       
       </div>
@@ -32,3 +33,4 @@ const MessageDetailsPage = () => {
 };
 
 export default MessageDetailsPage;
+
