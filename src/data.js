@@ -1,0 +1,5 @@
+export const message = [
+    { "id": 1, "sender": "John", "content": "Hello there!" },
+    { "id": 2, "sender": "Alice", "content": "How are you?" },
+    { "id": 3, "sender": "Bob", "content": "Nice to meet you!" }
+  ]
