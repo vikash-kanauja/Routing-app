@@ -1,14 +1,15 @@
 import React from 'react'
-import { BrowserRouter,Routes,Route } from 'react-router-dom'
-import Home from './components/Home'
-import About from './components/About'
-import Messages from './components/Messages'
-import MessageDetailsPage from "./components/MessageDetailsPage";
-import Contact from './components/Contact'
+import { HashRouter,Routes,Route } from 'react-router-dom'
+import Home from './Pages/Home'
+import About from './Pages/About'
+import Messages from './Pages/Messages'
+import MessageDetailsPage from "./Pages/MessageDetailsPage";
+import Contact from './Pages/Contact'
 import Navbar from './components/Navbar'
+import PageNotFound from './Pages/PageNotFound'
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
     <Navbar/>
         <Routes>
             <Route path='/' element={<Home/>}/>
@@ -16,8 +17,9 @@ const App = () => {
             <Route path='/contact' element={<Contact/>}/>
             <Route path='/message' element={<Messages />}/>
             <Route path='/message/:id' element={<MessageDetailsPage  />}/>
+            <Route path="*"  element={<PageNotFound />}  />
         </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 

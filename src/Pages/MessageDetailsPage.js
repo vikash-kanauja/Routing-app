@@ -1,12 +1,12 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { message } from "../data";
+import data from "../MessageData/data.json";
 
 const MessageDetailsPage = () => {
   const { id } = useParams();
 
   // Find the message with the matching id
-  const messageData = message.find((message) => message.id === parseInt(id));
+  const messageData = data.message.find((message) => message.id === parseInt(id));
 
   return (
     <div className="bg-gray-100 min-h-screen">
