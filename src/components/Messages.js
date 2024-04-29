@@ -1,10 +1,8 @@
 import React from "react";
-// import { useState } from "react";
 import { Link } from "react-router-dom";
 import { message } from "../data";
 const Messages = () => {
   return (
-
     <div className="bg-gray-100 min-h-screen">
       <div className="container mx-auto py-12">
       <h1 className="text-red-600 text-3xl font-bold  mb-6 text-center">Messages</h1>
